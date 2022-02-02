@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sujang <sujang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/02 11:16:09 by sujang            #+#    #+#             */
+/*   Updated: 2022/02/02 11:16:49 by sujang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	find_match(const char *str, const char *substr, size_t len, int j)
@@ -19,21 +31,21 @@ static int	find_match(const char *str, const char *substr, size_t len, int j)
 	return (0);
 }
 
-char		*ft_strnstr(const char *str, const char *substr, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	int		flag;
 
 	i = 0;
-	if (substr[i] == '\0')
-		return ((char*)str);
-	while (str[i])
+	if (needle[i] == '\0')
+		return ((char *)haystack);
+	while (haystack[i])
 	{
-		if (str[i] == substr[0])
+		if (haystack[i] == needle[0])
 		{
-			flag = find_match(str, substr, len, i);
+			flag = find_match(haystack, needle, len, i);
 			if (flag == 1)
-				return ((char*)str + i);
+				return ((char *)haystack + i);
 		}
 		i++;
 	}

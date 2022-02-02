@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sujang <sujang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/02 11:15:58 by sujang            #+#    #+#             */
+/*   Updated: 2022/02/02 11:16:36 by sujang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void		*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t				i;
-	unsigned	char	*tmp;
+	size_t			index;
 
-	tmp = (unsigned	char*)s;
-	i = 0;
-	while (i < n)
+	index = 0;
+	while (index < len)
 	{
-		tmp[i++] = c;
+		*((unsigned char *)b + index) = c;
+		index++;
 	}
-	return (s);
+	return (b);
 }

@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sujang <sujang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/02 11:16:05 by sujang            #+#    #+#             */
+/*   Updated: 2022/02/02 11:16:43 by sujang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t num;
+	size_t	i;
+	size_t	num;
 
 	i = 0;
-	num = size - 1;
+	num = dstsize - 1;
 	if (!dst || !src)
 		return (0);
-	if (size == 0)
+	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (src[i] && num > 0)
 	{
@@ -17,7 +29,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 		num--;
 	}
-	if (size > 0)
+	if (dstsize > 0)
 		dst[i] = '\0';
 	return (ft_strlen(src));
 }
