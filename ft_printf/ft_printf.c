@@ -6,7 +6,7 @@
 /*   By: sujang <sujang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:10:42 by sujang            #+#    #+#             */
-/*   Updated: 2022/03/10 20:48:40 by sujang           ###   ########.fr       */
+/*   Updated: 2022/03/17 18:11:47 by sujang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_check_type(char format, va_list *args)
 	if (format == 'x')
 		len += ft_hexdecimal(va_arg(*args, int));
 	if (format == 'X')
-		len += ft_hedecimal(va_arg(*args, int));
+		len += ft_hexdecimal_2(va_arg(*args, int));
 	if (format == 'u')
 		len += ft_unsigned(va_arg(*args, int));
 	if (format == 'p')

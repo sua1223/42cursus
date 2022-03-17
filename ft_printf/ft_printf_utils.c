@@ -6,7 +6,7 @@
 /*   By: sujang <sujang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:26:06 by sujang            #+#    #+#             */
-/*   Updated: 2022/03/10 20:42:22 by sujang           ###   ########.fr       */
+/*   Updated: 2022/03/17 18:14:09 by sujang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ft_hexdecimal(unsigned int nbr)
 	return (len);
 }
 
-int	ft_hedecimal(unsigned int nbr)
+int	ft_hexdecimal_2(unsigned int nbr)
 {
 	unsigned int	len;
 
@@ -96,8 +96,8 @@ int	ft_hedecimal(unsigned int nbr)
 	}
 	if (nbr > 15)
 	{
-		len += ft_hedecimal(nbr / 16);
-		len += ft_hedecimal(nbr % 16);
+		len += ft_hexdecimal_2(nbr / 16);
+		len += ft_hexdecimal_2(nbr % 16);
 	}
 	return (len);
 }
